@@ -12,13 +12,18 @@ const {
 }  = useForecast()
 
   return (
-    <main className="flex justify-center items-center bg-gradient-to-br from-sky-400 via-rose-400 to-lime-400 h-[100vh] w-full">
-
+     <main className="flex justify-center items-center bg-gradient-to-br from-sky-400 via-rose-400 to-lime-400 h-[100vh] w-full">
       {forecast ? (
-<Forecast  data={forecast}/>      ):
-      <Search term={term} options={options} onInputChange={onInputChange} onSubmit={onSubmit} onOptionSelect={onOptionSelect}
-      />
-}
+        <Forecast data={forecast} />
+      ) : (
+        <Search
+          term={term}
+          options={options}
+          onInputChange={onInputChange}
+          onOptionSelect={onOptionSelect}
+          onSubmit={onSubmit}
+        />
+      )}
     </main>
   )
 }

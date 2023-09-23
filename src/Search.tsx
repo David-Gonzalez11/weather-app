@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import "../src/styles.css"
+import Suggestions from "./Suggestions"
 import React from "react"
 import { optionType } from "../types"
 import { ChangeEvent } from "react"
@@ -30,13 +31,15 @@ const Search = ({term,options, onInputChange, onOptionSelect, onSubmit,}: Props)
             className="px-2 py-1 rounded-1-md border-2 border-white"
             onChange={onInputChange}
           ></input>
-            <ul className="absolute top-9 bg-white m1-1 rounded-b-md">
+                <Suggestions options={options} onSelect={onOptionSelect} />
+
+            {/* <ul className="absolute top-9 bg-white m1-1 rounded-b-md">
           {options.map((option: optionType, index: number) => (
             <li key={option.name + "-" + index}>
           <button className="text-left text-sm w-full hover:bg-zinc-700 hover:text-white px-2 py-1 cursor-pointer" onClick={() => onOptionSelect(option)}>{option.name}</button>
           </li>
             ) )}
-            </ul>
+            </ul> */}
           <button className="rounded-r-md border-2 border-zinc-100 hover:border-zinc-500 hover:text-zinc-500 text-zinc-100 px-2 py-1 cursor-pointer" onClick={onSubmit}>
             Search
           </button>
