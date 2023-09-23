@@ -16,6 +16,7 @@ const getForecast = (city: optionType) => {
   fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&exclude={part}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
   .then((res) => res.json())
   .then((data) => {
+    console.log(data)
     const forecastData = {
       ...data.city, list: data.list.slice(0,16),
     }
