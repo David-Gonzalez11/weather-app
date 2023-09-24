@@ -1,8 +1,8 @@
-import React from 'react'
-import Degree from './icons/Degree'
-import Sunrise from './icons/Sunrise'
-import Sunset from './icons/Sunset'
-import Tile from './Tile'
+import React from "react"
+import Degree from "./icons/Degree"
+import Sunrise from "./icons/Sunrise"
+import Sunset from "./icons/Sunset"
+import Tile from "./Tile"
 
 import {
   getHumidityValue,
@@ -10,9 +10,9 @@ import {
   getVisibilityValue,
   getSunTime,
   getPop,
-} from './helpers/index'
+} from "./helpers/index"
 
-import { forecastType } from '../types'
+import { forecastType } from "../types"
 
 type Props = {
   data: forecastType
@@ -35,7 +35,7 @@ const Forecast = ({ data }: Props) => {
             {today.weather[0].main} ({today.weather[0].description})
           </p>
           <p className="text-sm">
-            H: <Degree temp={Math.ceil(today.main.temp_max)} /> L:{' '}
+            H: <Degree temp={Math.ceil(today.main.temp_max)} /> L:{" "}
             <Degree temp={Math.floor(today.main.temp_min)} />
           </p>
         </section>
@@ -47,9 +47,11 @@ const Forecast = ({ data }: Props) => {
               className="inline-block text-center w-[50px] flex-shrink-0"
             >
               <p className="text-xs">
-                {i === 0 ? 'Now' : new Date(item.dt * 1000).toLocaleString('default', {
-                  weekday: "long",
-                })}
+                {i === 0
+                  ? "Now"
+                  : new Date(item.dt * 1000).toLocaleString("default", {
+                      weekday: "long",
+                    })}
               </p>
               <img
                 alt={`weather-icon-${item.weather[0].description}`}
@@ -74,9 +76,7 @@ const Forecast = ({ data }: Props) => {
             icon="wind"
             title="Wind"
             info={`${Math.round(today.wind.speed)} mph`}
-            description={`${getWindDirection(
-              Math.round(today.wind.deg)
-            )}, gusts
+            description={`${getWindDirection(Math.round(today.wind.deg))}, gusts
             ${today.wind.gust.toFixed(1)} mph`}
           />
           <Tile
@@ -85,8 +85,8 @@ const Forecast = ({ data }: Props) => {
             info={<Degree temp={Math.round(today.main.feels_like)} />}
             description={`Feels ${
               Math.round(today.main.feels_like) < Math.round(today.main.temp)
-                ? 'colder'
-                : 'warmer'
+                ? "colder"
+                : "warmer"
             }`}
           />
           <Tile
@@ -106,7 +106,7 @@ const Forecast = ({ data }: Props) => {
             title="Pressure"
             info={`${today.main.pressure} hPa`}
             description={` ${
-              Math.round(today.main.pressure) < 1013 ? 'Lower' : 'Higher'
+              Math.round(today.main.pressure) < 1013 ? "Lower" : "Higher"
             } than standard`}
           />
           <Tile

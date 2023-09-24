@@ -1,5 +1,5 @@
-import React from 'react'
-import { optionType } from './../types/index'
+import React from "react"
+import { optionType } from "./../types/index"
 
 type componentProps = {
   options: []
@@ -9,7 +9,7 @@ type componentProps = {
 const Suggestions = ({ options, onSelect }: componentProps): JSX.Element => (
   <ul className="absolute top-9 bg-white ml-1 rounded-b-md">
     {options.map((option: optionType, index: number) => (
-      <li key={option.name + '-' + index}>
+      <li key={option.name + "-" + index}>
         <button
           className="text-left text-sm w-full hover:bg-zinc-700 hover:text-white px-2 py-1 cursor-pointer"
           onClick={() => onSelect(option)}
