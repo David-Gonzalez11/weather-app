@@ -12,7 +12,7 @@ const {
 }  = useForecast()
 
   return (
-     <main className="flex justify-center items-center bg-gradient-to-br from-sky-400 via-rose-400 to-lime-400 h-[100vh] w-full">
+     <main className="flex justify-center items-center bg-gradient-to-br from-sky-300 via-rose-300 to-lime-400 h-[100vh] w-full">
       {forecast ? (
         <Forecast data={forecast} />
       ) : (
