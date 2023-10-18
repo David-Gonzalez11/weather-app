@@ -46,7 +46,7 @@ const Forecast = ({ data }: Props) => {
               key={i}
               className="inline-block text-center w-[50px] flex-shrink-0"
             >
-              <p className="text-xs">
+              <p className="text-xs" style={{fontSize: ".50rem"}}>
                 {i === 0
                   ? "Now"
                   : new Date(item.dt * 1000).toLocaleString("default", {
